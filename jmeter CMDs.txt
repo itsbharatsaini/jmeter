@@ -1,0 +1,1 @@
+jmeter -n -t bin/examples/CSVSample.jmx -l test/run-test01.jtl
