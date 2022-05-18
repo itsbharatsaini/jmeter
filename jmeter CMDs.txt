@@ -1,1 +1,11 @@
+-----------> Run jmeter cmd to simple test
 jmeter -n -t bin/examples/CSVSample.jmx -l test/run-test01.jtl
+
+-----------> Run sh shell of k8s pod
+
+kubectl exec -it -n default jmeter-7f49444db9-4zb4h -c jmeter -- sh
+
+
+
+-----------> Run jmeter test in k8s pod
+kubectl exec -it -n default jmeter-7f49444db9-4zb4h -c jmeter -- jmeter -n -t bin/examples/CSVSample.jmx -l test/run-test01.jtl
