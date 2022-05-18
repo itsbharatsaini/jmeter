@@ -4,7 +4,7 @@ ARG JMETER_VERSION="5.4.3"
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV	JMETER_BIN	${JMETER_HOME}/bin
 ENV	JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
-
+EXPOSE 80
 RUN    apk update \
 	&& apk upgrade \
 	&& apk add ca-certificates \
@@ -23,4 +23,5 @@ ENV PATH $PATH:$JMETER_BIN
 
 
 WORKDIR	${JMETER_HOME}
-# CMD [ "jmeter" "-n" "-t" "bin/examples/CSVSample.jmx" ]
+# CMD ["/bin/sh", "-c", "jmeter -n -t bin/examples/CSVSample.jmx -l test/run-test01.jtl" ]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
