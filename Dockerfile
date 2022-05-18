@@ -23,3 +23,4 @@ ENV PATH $PATH:$JMETER_BIN
 
 
 WORKDIR	${JMETER_HOME}
+# CMD [ "jmeter" "-n" "-t" "bin/examples/CSVSample.jmx" ]
