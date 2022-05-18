@@ -15,8 +15,8 @@ pipeline{
                 script {
                     withCredentials([kubeconfigFile(credentialsId: 'K8S_Credential', variable: 'KUBECONFIG')])
                     {
-                        powershell 'kubectl apply -f jmeter-deployment.yaml'
-                    }
+
+                        powershell 'kubectl apply -f Kubernetes\\jmeter-deployment.yaml'                    }
                 }
             }
         }
