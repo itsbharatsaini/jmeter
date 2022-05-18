@@ -1,2 +1,2 @@
 # jmeter
-jmeter to k8s
+jmeter into k8s
