@@ -1,0 +1,7 @@
+kubectl get deployments,pvc,services
+kubectl delete --all deployments,services,pvc
+
+kubectl apply -f jmeter-deployment.yaml
+
+
+kubectl get service
